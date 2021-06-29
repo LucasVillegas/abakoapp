@@ -10,6 +10,9 @@ use App\Http\Controllers\ConductorController;
 use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\TipoServicioController;
 use App\Http\Controllers\ServicioController;
+use App\Http\Controllers\SerieArticuloController;
+use App\Http\Controllers\ArticuloController;
+use App\Http\Controllers\ComponenteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -67,8 +70,26 @@ Route::get('tipo_servicios_block/{id}', [TipoServicioController::class, 'block']
 Route::get('tipo_servicios_activate/{id}', [TipoServicioController::class, 'activate'])->name('tipo_servicios.activate');
 /* Fin ruta Tipo servicio */
 
-/* Rutas tipo servicio */
+/* Rutas  servicio */
 Route::resource('servicios', ServicioController::class)->names('servicios');
 Route::get('servicios_block/{id}', [ServicioController::class, 'block'])->name('servicios.block');
 Route::get('servicios_activate/{id}', [ServicioController::class, 'activate'])->name('servicios.activate');
-/* Fin ruta Tipo servicio */
+/* Fin ruta  servicio */
+
+/* Rutas  Tipo Articulo */
+Route::resource('serie_articulos', SerieArticuloController::class)->names('serie_articulos');
+Route::get('serie_articulos_block/{id}', [SerieArticuloController::class, 'block'])->name('serie_articulos.block');
+Route::get('serie_articulos_activate/{id}', [SerieArticuloController::class, 'activate'])->name('serie_articulos.activate');
+/* Fin ruta Tipo Articulo */
+
+/* Rutas Articulo */
+Route::resource('articulos', ArticuloController::class)->names('articulos');
+Route::get('articulos_block/{id}', [ArticuloController::class, 'block'])->name('articulos.block');
+Route::get('articulos_activate/{id}', [ArticuloController::class, 'activate'])->name('articulos.activate');
+/* Fin ruta Articulo */
+
+/* Rutas Componente */
+Route::resource('componentes', ComponenteController::class)->names('componentes');
+Route::get('componentes_block/{id}', [ComponenteController::class, 'block'])->name('componentes.block');
+Route::get('componentes_activate/{id}', [ComponenteController::class, 'activate'])->name('componentes.activate');
+/* Fin Ruta Componente */

@@ -13,7 +13,6 @@ class Articulo extends Model
 
     protected $fillable = [
         'serie_articulo_id',
-        'servicio_id',
         'codarticulo',
         'descripcion',
         'referencia',
@@ -30,15 +29,17 @@ class Articulo extends Model
         return $this->hasMany(Componente::class);
     }
 
+    public function serie_artiulo()
+    {
+        return $this->belongsTo(Serie_Articulo::class, 'serie_articulo_id');
+    }
+
     public function servicio()
     {
         return $this->belongsTo(Servicio::class);
     }
 
-    public function serie_artiulo()
-    {
-        return $this->belongsTo(Serie_Articulo::class);
-    }
+
 
     public function almacen()
     {

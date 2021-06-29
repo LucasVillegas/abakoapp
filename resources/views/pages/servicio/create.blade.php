@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'servicio', 'titlePage' => __('Nuevo  Servicio')])
+@extends('layouts.app', ['activePage' => 'servicio', 'titlePage' => __('Nuevo Servicio')])
 
 @section('content')
     <div class="content">
@@ -52,12 +52,28 @@
                                         </div>
                                     </div>
 
+                                    <div class="col-md-4 mt-3">
+                                        <div
+                                            class="form-group bmd-form-group{{ $errors->has('nombre_servicio') ? ' has-danger' : '' }}">
+                                            <label for="nombre_servicio"
+                                                class="bmd-label-floating">{{ __('Nombre Servicio') }}</label>
+                                            <input
+                                                class="form-control{{ $errors->has('nombre_servicio') ? ' is-invalid' : '' }}"
+                                                input type="text" name="nombre_servicio" id="nombre_servicio"
+                                                {{-- placeholder="{{ __('Tipo de Servicio') }}" --}} value="" />
+                                            @if ($errors->has('nombre_servicio'))
+                                                <span id="name-error" class="error text-danger"
+                                                    for="input-name">{{ $errors->first('nombre_servicio') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+
 
                                     <div class="col-md-4 mt-3">
                                         <div
                                             class="form-group bmd-form-group{{ $errors->has('fecha_inicio') ? ' has-danger' : '' }}">
                                             <label for="fecha_inicio"
-                                               {{--  class="bmd-label-floating" --}}>{{ __('Fecha Inicio') }}</label>
+                                                {{-- class="bmd-label-floating" --}}>{{ __('Fecha Inicio') }}</label>
                                             <input
                                                 class="form-control{{ $errors->has('fecha_inicio') ? ' is-invalid' : '' }}"
                                                 input type="date" name="fecha_inicio" id="fecha_inicio"
@@ -72,12 +88,11 @@
                                     <div class="col-md-4 mt-3">
                                         <div
                                             class="form-group bmd-form-group{{ $errors->has('fecha_fin') ? ' has-danger' : '' }}">
-                                            <label for="fecha_fin"
-                                                {{-- class="bmd-label-floating" --}}>{{ __('Fecha Fin') }}</label>
+                                            <label for="fecha_fin" {{-- class="bmd-label-floating" --}}>{{ __('Fecha Fin') }}</label>
                                             <input
                                                 class="form-control{{ $errors->has('fecha_fin') ? ' is-invalid' : '' }}"
-                                                input type="date" name="fecha_fin" id="fecha_fin"
-                                                {{-- placeholder="{{ __('Tipo de Servicio') }}" --}} value="" />
+                                                input type="date" name="fecha_fin" id="fecha_fin" {{-- placeholder="{{ __('Tipo de Servicio') }}" --}}
+                                                value="" />
                                             @if ($errors->has('fecha_fin'))
                                                 <span id="name-error" class="error text-danger"
                                                     for="input-name">{{ $errors->first('fecha_fin') }}</span>
@@ -101,15 +116,15 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6 mt-3">
+                                    <div class="col-md-4 mt-3">
                                         <div
                                             class="form-group bmd-form-group{{ $errors->has('costo_real') ? ' has-danger' : '' }}">
                                             <label for="costo_real"
                                                 class="bmd-label-floating">{{ __('Costo Real') }}</label>
                                             <input
                                                 class="form-control{{ $errors->has('costo_real') ? ' is-invalid' : '' }}"
-                                                input type="number" name="costo_real" id="costo_real"
-                                                {{-- placeholder="{{ __('Tipo de Servicio') }}" --}} value="" />
+                                                input type="number" name="costo_real" id="costo_real" {{-- placeholder="{{ __('Tipo de Servicio') }}" --}}
+                                                value="" />
                                             @if ($errors->has('costo_real'))
                                                 <span id="name-error" class="error text-danger"
                                                     for="input-name">{{ $errors->first('costo_real') }}</span>
@@ -117,7 +132,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6 mt-3">
+                                    <div class="col-md-4 mt-3">
                                         <div
                                             class="form-group bmd-form-group{{ $errors->has('diferencia_costo') ? ' has-danger' : '' }}">
                                             <label for="diferencia_costo"

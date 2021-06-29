@@ -70,7 +70,7 @@
                     <i class="material-icons">
                         inventory_2
                     </i>
-                    <p>{{ __('Servicio') }}
+                    <p>{{ __('Servicios') }}
                         <b class="caret"></b>
                     </p>
                 </a>
@@ -79,13 +79,13 @@
                         <li class="nav-item{{ $activePage == 'tipo_servicio' ? ' active' : '' }}">
                             <a class="nav-link" href="{{ route('tipo_servicios.index') }}">
                                 <i class="material-icons">design_services</i>
-                                <p>{{ __('Tipo Articulo') }}</p>
+                                <p>{{ __('Tipo Servicios') }}</p>
                             </a>
                         </li>
                         <li class="nav-item{{ $activePage == 'servicio' ? ' active' : '' }}">
                             <a class="nav-link" href="{{ route('servicios.index') }}">
                                 <i class="material-icons">hail</i>
-                                <p>{{ __('Articulos') }}</p>
+                                <p>{{ __('Servicios') }}</p>
                             </a>
                         </li>
                     </ul>
@@ -103,22 +103,22 @@
                 </a>
                 <div class="collapse show" id="almacen">
                     <ul class="nav">
-                        <li class="nav-item{{ $activePage == 'tipo_servicio' ? ' active' : '' }}">
-                            <a class="nav-link" href="{{-- {{ route('tipo_servicios.index') }} --}}">
-                                <i class="material-icons">design_services</i>
-                                <p>{{ __('Tipo Servicios') }}</p>
-                            </a>
-                        </li>
-                        <li class="nav-item{{ $activePage == 'servicio' ? ' active' : '' }}">
-                            <a class="nav-link" href="{{-- {{ route('servicios.index') }} --}}">
-                                <i class="material-icons">miscellaneous_services</i>
-                                <p>{{ __('Serviciós') }}</p>
-                            </a>
-                        </li>
-                        <li class="nav-item{{ $activePage == 'servicio' ? ' active' : '' }}">
-                            <a class="nav-link" href="{{-- {{ route('servicios.index') }} --}}">
+                        <li class="nav-item{{ $activePage == 'componente' ? ' active' : '' }}">
+                            <a class="nav-link" href="{{ route('componentes.index') }}">
                                 <i class="material-icons">widgets</i>
                                 <p>{{ __('Componentes') }}</p>
+                            </a>
+                        </li>
+                        <li class="nav-item{{ $activePage == 'tipo_articulo' ? ' active' : '' }}">
+                            <a class="nav-link" href="{{ route('serie_articulos.index') }}">
+                                <i class="material-icons">design_services</i>
+                                <p>{{ __('Tipo Articulos') }}</p>
+                            </a>
+                        </li>
+                        <li class="nav-item{{ $activePage == 'articulo' ? ' active' : '' }}">
+                            <a class="nav-link" href="{{ route('articulos.index') }}">
+                                <i class="material-icons">miscellaneous_services</i>
+                                <p>{{ __('Articulos') }}</p>
                             </a>
                         </li>
                     </ul>

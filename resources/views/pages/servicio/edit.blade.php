@@ -60,6 +60,23 @@
 
                                     <div class="col-md-4 mt-3">
                                         <div
+                                            class="form-group bmd-form-group{{ $errors->has('nombre_servicio') ? ' has-danger' : '' }}">
+                                            <label for="nombre_servicio"
+                                                class="bmd-label-floating">{{ __('Nombre Servicio') }}</label>
+                                            <input
+                                                class="form-control{{ $errors->has('nombre_servicio') ? ' is-invalid' : '' }}"
+                                                input type="text" name="nombre_servicio" id="nombre_servicio"
+                                                {{-- placeholder="{{ __('Tipo de Servicio') }}" --}}
+                                                value="{{ old('nombre_servicio', $row->descripcion_servicio) }}" />
+                                            @if ($errors->has('nombre_servicio'))
+                                                <span id="name-error" class="error text-danger"
+                                                    for="input-name">{{ $errors->first('nombre_servicio') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 mt-3">
+                                        <div
                                             class="form-group bmd-form-group{{ $errors->has('fecha_inicio') ? ' has-danger' : '' }}">
                                             <label for="fecha_inicio"
                                                 {{-- class="bmd-label-floating" > --}}>{{ __('Fecha Inicio') }}</label>

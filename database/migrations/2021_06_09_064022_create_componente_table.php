@@ -15,8 +15,8 @@ class CreateComponenteTable extends Migration
     {
         Schema::create('componente', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->unsignedBigInteger("articulo_id");
-            $table->foreign("articulo_id")->references("id")->on("articulo");
+            /* $table->unsignedBigInteger("articulo_id");
+            $table->foreign("articulo_id")->references("id")->on("articulo"); */
             $table->string("descripcion_componente");
             $table->string("codigo_componente");
             $table->integer("referencia");

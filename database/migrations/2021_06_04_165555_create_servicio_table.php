@@ -19,6 +19,7 @@ class CreateServicioTable extends Migration
             $table->foreign("tipo_servicio_id")->references("id")->on("tipo_servicio");
             $table->unsignedBigInteger("trabajador_id");
             $table->foreign("trabajador_id")->references("id")->on("trabajador");
+            $table->string("descripcion_servicio", 255);
             $table->date("fecha_inicio");
             $table->date("fecha_fin");
             $table->double("costo_supuesto");

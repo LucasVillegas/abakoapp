@@ -14,7 +14,9 @@ class SerieArticuloController extends Controller
      */
     public function index()
     {
-        //
+        $serie_Articulo = Serie_Articulo::all();
+
+        return view('pages.tipo_articulo.index', compact('serie_Articulo'));
     }
 
     /**
@@ -24,7 +26,7 @@ class SerieArticuloController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.tipo_articulo.create');
     }
 
     /**
@@ -35,7 +37,11 @@ class SerieArticuloController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $serie_Articulo = new Serie_Articulo;
+        $serie_Articulo->descripcion_serie_articulo = $request->nombre_tipo_articulo;
+        $serie_Articulo->estado_serie = 1;
+        $serie_Articulo->save();
+        return redirect()->route('serie_articulos.index')->with('info', 'Tipo de Articulo Registrado Exitosamente');
     }
 
     /**
@@ -55,9 +61,10 @@ class SerieArticuloController extends Controller
      * @param  \App\Models\Serie_Articulo  $serie_Articulo
      * @return \Illuminate\Http\Response
      */
-    public function edit(Serie_Articulo $serie_Articulo)
+    public function edit($id)
     {
-        //
+        $serie_Articulo = Serie_Articulo::find($id);
+        return view('pages.tipo_articulo.edit', compact('serie_Articulo'));
     }
 
     /**
@@ -67,9 +74,13 @@ class SerieArticuloController extends Controller
      * @param  \App\Models\Serie_Articulo  $serie_Articulo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Serie_Articulo $serie_Articulo)
+    public function update(Request $request, $id)
     {
-        //
+        $serie_Articulo = Serie_Articulo::find($id);
+        $serie_Articulo->descripcion_serie_articulo = $request->nombre_tipo_articulo;
+        $serie_Articulo->estado_serie = 1;
+        $serie_Articulo->save();
+        return redirect()->route('serie_articulos.index')->with('info', 'Tipo de Articulo Actualizado Exitosamente');
     }
 
     /**
@@ -78,8 +89,27 @@ class SerieArticuloController extends Controller
      * @param  \App\Models\Serie_Articulo  $serie_Articulo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Serie_Articulo $serie_Articulo)
+    public function destroy($id)
     {
-        //
+        $serie_Articulo = Serie_Articulo::find($id);
+        $serie_Articulo->delete();
+        return view('pages.serie_articulos.index')('info', 'Tipo de Articulo fue Eliminado Corretamente');
+    }
+
+    //Funcion para  Bloqueara al usuario
+    public function block($id)
+    {
+        $serie_Articulo = Serie_Articulo::find($id);
+        $serie_Articulo->estado_serie = 0;
+        $serie_Articulo->save();
+        return back()->with('info', 'Tipo de Articulo fue Bloqueado Corretamente');
+    }
+
+    public function activate($id)
+    {
+        $serie_Articulo = Serie_Articulo::find($id);
+        $serie_Articulo->estado_serie = 1;
+        $serie_Articulo->save();
+        return back()->with('info', 'Tipo de Articulo fue Activado Corretamente');
     }
 }

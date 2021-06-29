@@ -172,7 +172,7 @@
                 $(".alerta").fadeOut(1000);
             }, 1000);
 
-            $("#tablaUsuario").DataTable({
+            $("#datatable").DataTable({
                 responsive: true,
                 autoWidth: false,
                 destroy: true,

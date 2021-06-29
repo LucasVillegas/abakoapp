@@ -48,6 +48,7 @@ class ServicioController extends Controller
         $servicio = new Servicio;
         $servicio->tipo_servicio_id = $request->tipo_Servicio;
         $servicio->trabajador_id = $request->trabajador;
+        $servicio->descripcion_servicio = $request->nombre_servicio;
         $servicio->fecha_inicio = $request->fecha_inicio;
         $servicio->fecha_fin = $request->fecha_fin;
         $servicio->costo_supuesto = $request->costo_supuesto;
@@ -102,6 +103,7 @@ class ServicioController extends Controller
         $servicio = Servicio::find($id);
         $servicio->tipo_servicio_id = $request->tipo_Servicio;
         $servicio->trabajador_id = $request->trabajador;
+        $servicio->descripcion_servicio = $request->nombre_servicio;
         $servicio->fecha_inicio = $request->fecha_inicio;
         $servicio->fecha_fin = $request->fecha_fin;
         $servicio->costo_supuesto = $request->costo_supuesto;

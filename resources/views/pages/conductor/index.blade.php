@@ -28,7 +28,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive my-3">
-                                <table class="table table-sm text-center">
+                                <table class="table table-sm text-center" id="datatable">
                                     <thead class=" text-primary">
                                         <tr>
                                             <th>ID</th>

@@ -29,7 +29,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive ">
-                                <table class="table table-sm table-striped  text-center" id="tablaUsuario">
+                                <table class="table table-sm table-striped  text-center" id="datatable">
                                     <thead class="text-primary">
                                         <tr>
                                             <th>ID</th>
